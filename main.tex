@@ -102,7 +102,7 @@ The Lambert W function is defined such that $W(xe^x) = x$. So we can re-write th
     \frac{1}{c} \cdot W\left( \frac{e^{2-y}}{y} \right).
 \end{equation}
 
-Thus, unlike StableSwap, equation \eqref{eq:lambert} can be written in explicit form using the Lambert W function. We call this the LAMMbert AMM. A depiction is shown in Fig. \ref{fig:lambertw}. Equations of this form appear in the solution of linear constant-coefficient delay equations \cite{corless1996lambert}, although it is unclear what, if any, the relationship between those equations and AMMs are. 
+Thus equation \eqref{eq:lambert} can be written in explicit form using the Lambert W function. We call this the LAMMbert AMM. A depiction is shown in Fig. \ref{fig:lambertw}. Equations of this form appear in the solution of linear constant-coefficient delay equations \cite{corless1996lambert}, although it is unclear what, if any, the relationship between those equations and AMMs are. 
 
 Note that there are currently no audited methods to use the Lambert W function on chain, so it is unclear whether or not LAMMbert can be brought to life in a live smart contract today. However, a recent proposal to add such a function to the \href{https://github.com/Vectorized/solady/pull/706}{solady} repository may change this in the near future.
 
