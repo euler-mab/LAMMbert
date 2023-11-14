@@ -84,23 +84,27 @@ Then adding equations \eqref{eq:cs-2} and \eqref{eq:cp-2} we obtain
 
 This equation combines the CSMM and CPMM equations in an interesting way that is similar to StableSwap \cite{egorov2019stableswap}. When $c = 0$ we have a pure CPMM equation, when $c$ grows large it tends towards a pure CSMM equation. 
 
-We now show that equation \eqref{eq:stable} can be solved using the Lambert W function. Exponentiating both sides, and rearranging, we have
+We now show that equation \eqref{eq:stable} can be solved using the Lambert W function. Exponentiating both sides, multiplying through by $c$, and rearranging, we have
 
 \begin{equation}
 \label{eq:lambert}
-    xe^{cx}
+    cxe^{cx}
     = 
-    \frac{e^{2c-y}}{y}.
+    \frac{ce^{2c-y}}{y}.
 \end{equation}
 
 The Lambert W function is defined such that $W(xe^x) = x$. So we can re-write the prior equation by taking $W$ of both sides, to get
 
-\begin{equation}
+\begin{align}
 \label{eq:lambert-2}
+    cx
+    &= 
+    W\left( \frac{ce^{2c-y}}{y} \right) \\ \nonumber
+    \implies
     x
-    = 
-    \frac{1}{c} \cdot W\left( \frac{e^{2-y}}{y} \right).
-\end{equation}
+    &=
+    \frac{1}{c} \cdot W\left( \frac{ce^{2c-y}}{y} \right).
+\end{align}
 
 Thus equation \eqref{eq:lambert} can be written in explicit form using the Lambert W function. We call this the LAMMbert AMM. A depiction is shown in Fig. \ref{fig:lambertw}. Equations of this form appear in the solution of linear constant-coefficient delay equations \cite{corless1996lambert}, although it is unclear what, if any, the relationship between those equations and AMMs are. 
 
